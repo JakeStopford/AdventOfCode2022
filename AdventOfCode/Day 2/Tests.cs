@@ -9,5 +9,11 @@ namespace AdventOfCode.Day2
         {
             Solution2.GetTotalScore();
         }
+        
+        [Test]
+        public void TestNewStrategyTotalScore()
+        {
+            Solution2.GetNewTotalScore();
+        }
     }
 }

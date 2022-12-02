@@ -44,6 +44,44 @@ namespace AdventOfCode
             }
             return totalScore;
         }
+
+        public static int GetNewTotalScore()
+        {
+            for (int i = 0; i < turns.Length; i++)
+            {
+                var elfHand = turns[i].Split(" ")[0];
+                var myResult = turns[i].Split(" ")[1];
+
+                switch (elfHand)
+                {
+                    case "A": //rock
+                        if (myResult == "X")
+                            totalScore += 3;
+                        if (myResult == "Y")
+                            totalScore += 4;
+                        if (myResult == "Z")
+                            totalScore += 8;
+                        break;
+                    case "B": //paper
+                        if (myResult == "X")
+                            totalScore += 1;
+                        if (myResult == "Y")
+                            totalScore += 5;
+                        if (myResult == "Z")
+                            totalScore += 9;
+                        break;
+                    default: //scissors
+                        if (myResult == "X")
+                            totalScore += 2;
+                        if (myResult == "Y")
+                            totalScore += 6;
+                        if (myResult == "Z")
+                            totalScore += 7;
+                        break;
+                }
+            }
+            return totalScore;
+        }
     }
 }
 
