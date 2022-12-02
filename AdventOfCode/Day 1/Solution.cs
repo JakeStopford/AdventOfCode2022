@@ -3,7 +3,7 @@ namespace AdventOfCode
     public static class Solution
     {
         private static string[] numbers =
-            System.IO.File.ReadAllLines(@"C:\source\repos\AdventOfCode2023\AdventOfCode\Resources\Data.txt");
+            System.IO.File.ReadAllLines(@"C:\source\repos\AdventOfCode2023\AdventOfCode\Resources\Day1.txt");
 
         public static int FindMostCalories()
         {
