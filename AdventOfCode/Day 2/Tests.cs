@@ -1,3 +1,4 @@
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace AdventOfCode.Day2
@@ -7,13 +8,17 @@ namespace AdventOfCode.Day2
         [Test]
         public void TestTotalScore()
         {
-            Solution2.GetTotalScore();
+            var actual = Solution2.GetTotalScore();
+
+            actual.Should().Be(11449);
         }
-        
+
         [Test]
         public void TestNewStrategyTotalScore()
         {
-            Solution2.GetNewTotalScore();
+            var actual = Solution2.GetNewTotalScore();
+
+            actual.Should().Be(13187);
         }
     }
 }

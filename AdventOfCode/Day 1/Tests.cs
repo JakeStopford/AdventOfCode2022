@@ -1,3 +1,4 @@
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace AdventOfCode.Day1
@@ -11,7 +12,7 @@ namespace AdventOfCode.Day1
             var totalCalories = Solution.FindMostCalories();
 
             // Assert
-            Assert.AreEqual(66616, totalCalories);
+            totalCalories.Should().Be(66616);
         }
         
         [Test]
@@ -21,7 +22,7 @@ namespace AdventOfCode.Day1
             var totalCalories = Solution.FindTop3Calories();
 
             // Assert
-            Assert.AreEqual(199172, totalCalories);
+            totalCalories.Should().Be(199172);
         }
     }
 }

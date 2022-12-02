@@ -9,6 +9,7 @@ namespace AdventOfCode
 
         public static int GetTotalScore()
         {
+            totalScore = 0;
             for (int i = 0; i < turns.Length; i++)
             {
                 var elfHand = turns[i].Split(" ")[0];
@@ -47,6 +48,7 @@ namespace AdventOfCode
 
         public static int GetNewTotalScore()
         {
+            totalScore = 0;
             for (int i = 0; i < turns.Length; i++)
             {
                 var elfHand = turns[i].Split(" ")[0];
@@ -84,5 +86,3 @@ namespace AdventOfCode
         }
     }
 }
-
-//11449
