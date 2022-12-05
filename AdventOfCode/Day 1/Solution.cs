@@ -7,35 +7,10 @@ namespace AdventOfCode
 
         public static int FindMostCalories()
         {
-            var totalCalories = 0;
+            var elfCalories = new List<int>();
             var runningTotal = 0;
 
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                switch (numbers[i])
-                {
-                    case "":
-                        if (runningTotal >= totalCalories)
-                        {
-                            totalCalories = runningTotal;
-                        }
-                        runningTotal = 0;
-                        break;
-                    default:
-                        runningTotal += int.Parse(numbers[i]);
-                        break;
-                }
-            }
-            return totalCalories;
-        }
-
-        public static int FindTop3Calories()
-        {
-            var runningTotal = 0;
-
-            List<int> elfCalories = new List<int>();
-
-            for (int i = 0; i < numbers.Length; i++)
+            for (var i = 0; i < numbers.Length; i++)
             {
                 switch (numbers[i])
                 {
@@ -48,8 +23,28 @@ namespace AdventOfCode
                         break;
                 }
             }
-            elfCalories.Sort();
-            return elfCalories.TakeLast(3).Sum();
+            return elfCalories.Max();
+        }
+
+        public static int FindTop3Calories()
+        {
+            var elfCalories = new List<int>();
+            var runningTotal = 0;
+
+            for (var i = 0; i < numbers.Length; i++)
+            {
+                switch (numbers[i])
+                {
+                    case "":
+                        elfCalories.Add(runningTotal);
+                        runningTotal = 0;
+                        break;
+                    default:
+                        runningTotal += int.Parse(numbers[i]);
+                        break;
+                }
+            }
+            return elfCalories.OrderByDescending(x => x).Take(3).Sum();
         }
     }
 }
