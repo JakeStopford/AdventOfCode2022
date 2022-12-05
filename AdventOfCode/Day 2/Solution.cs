@@ -1,11 +1,11 @@
-namespace AdventOfCode
+namespace AdventOfCode.Day2
 {
     public static class Solution2
     {
         private static string[] turns =
             System.IO.File.ReadAllLines(@"C:\source\repos\AdventOfCode2023\AdventOfCode\Resources\Day2.txt");
 
-        private static int totalScore = 0;
+        private static int totalScore;
 
         public static int GetTotalScore()
         {
@@ -17,7 +17,7 @@ namespace AdventOfCode
 
                 switch (elfHand)
                 {
-                    case "A":
+                    case "A": //rock
                         if (myHand == "X")
                             totalScore += 4;
                         if (myHand == "Y")
@@ -25,7 +25,7 @@ namespace AdventOfCode
                         if (myHand == "Z")
                             totalScore += 3;
                         break;
-                    case "B":
+                    case "B": //paper
                         if (myHand == "X")
                             totalScore += 1;
                         if (myHand == "Y")
@@ -33,7 +33,7 @@ namespace AdventOfCode
                         if (myHand == "Z")
                             totalScore += 9;
                         break;
-                    default:
+                    default: //scissors
                         if (myHand == "X")
                             totalScore += 7;
                         if (myHand == "Y")

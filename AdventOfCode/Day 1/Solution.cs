@@ -1,4 +1,4 @@
-namespace AdventOfCode
+namespace AdventOfCode.Day1
 {
     public static class Solution
     {
