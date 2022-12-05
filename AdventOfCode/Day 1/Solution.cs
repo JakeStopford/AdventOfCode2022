@@ -2,7 +2,7 @@ namespace AdventOfCode
 {
     public static class Solution
     {
-        private static string[] numbers =
+        private static string[] calories =
             System.IO.File.ReadAllLines(@"C:\source\repos\AdventOfCode2023\AdventOfCode\Resources\Day1.txt");
 
         public static int FindMostCalories()
@@ -10,16 +10,16 @@ namespace AdventOfCode
             var elfCalories = new List<int>();
             var runningTotal = 0;
 
-            for (var i = 0; i < numbers.Length; i++)
+            for (var i = 0; i < calories.Length; i++)
             {
-                switch (numbers[i])
+                switch (calories[i])
                 {
                     case "":
                         elfCalories.Add(runningTotal);
                         runningTotal = 0;
                         break;
                     default:
-                        runningTotal += int.Parse(numbers[i]);
+                        runningTotal += int.Parse(calories[i]);
                         break;
                 }
             }
@@ -31,16 +31,16 @@ namespace AdventOfCode
             var elfCalories = new List<int>();
             var runningTotal = 0;
 
-            for (var i = 0; i < numbers.Length; i++)
+            for (var i = 0; i < calories.Length; i++)
             {
-                switch (numbers[i])
+                switch (calories[i])
                 {
                     case "":
                         elfCalories.Add(runningTotal);
                         runningTotal = 0;
                         break;
                     default:
-                        runningTotal += int.Parse(numbers[i]);
+                        runningTotal += int.Parse(calories[i]);
                         break;
                 }
             }

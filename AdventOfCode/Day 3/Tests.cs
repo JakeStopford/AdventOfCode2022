@@ -12,5 +12,13 @@ namespace AdventOfCode.Day3
 
             actual.Should().Be(7795);
         }
+        
+        [Test]
+        public void TestBadgeTotalScore()
+        {
+            var actual = Solution3.GetTotalBadgeScore();
+
+            actual.Should().Be(2703);
+        }
     }
 }

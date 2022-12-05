@@ -67,11 +67,24 @@ namespace AdventOfCode
             for (int i = 0; i < backpacks.Length; i++)
             {
                 var common = backpacks[i].Substring(0, backpacks[i].Length / 2).ToCharArray()
-                    .FirstOrDefault(x => backpacks[i].Substring(backpacks[i].Length / 2, backpacks[i].Length / 2)
+                    .First(x => backpacks[i].Substring(backpacks[i].Length / 2, backpacks[i].Length / 2)
                         .Contains(x));
                 arr[i] = common;
             }
 
+            return arr.Select(x => itemScores[x]).Sum();
+        }
+
+        public static int GetTotalBadgeScore()
+        {
+            char[] arr = new char[backpacks.Length / 3];
+
+            for (int i = 0; i < backpacks.Length; i+=3)
+            {
+                var common = backpacks[i].ToCharArray()
+                    .First(x => backpacks[i+1].Contains(x) && backpacks[i+2].Contains(x));
+                arr[i/3] = common;
+            }
             return arr.Select(x => itemScores[x]).Sum();
         }
     }
