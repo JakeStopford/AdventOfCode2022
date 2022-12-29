@@ -28,7 +28,7 @@ namespace AdventOfCode.Day5
             { "list9", list9},
         };
 
-        public static string GetTopCranes()
+        public static string GetTopCrates()
         {
             var arrays = cranes.TakeWhile(x => x != "");
             var instructions = cranes.Skip(arrays.Count() + 1).ToList();
@@ -61,6 +61,27 @@ namespace AdventOfCode.Day5
                     Destination = int.Parse(instructions[i].Split(" ")[5])
                 });
             }
+        }
+
+        public static object GetTopCrates9001()
+        {
+            
+
+            BuildInstructionList(instructions);
+
+            for (var i = 0; i < instructions.Count; i++)
+            {
+                var origin = instructionList[i].Origin;
+                var numberToMove = instructionList[i].NumberToMove;
+                var destination = instructionList[i].Destination;
+
+                var itemsToMove = lists["list" + origin].TakeLast(numberToMove);
+                lists["list" + destination].InsertRange(lists["list" + destination].Count, itemsToMove);
+                lists["list" + origin].RemoveRange(lists["list" + origin].Count - itemsToMove.Count(), itemsToMove.Count());
+            }
+
+            return $"{list1[list1.Count - 1]}{list2[list2.Count - 1]}{list3[list3.Count - 1]}{list4[list4.Count - 1]}{list5[list5.Count - 1]}" +
+                   $"{list6[list6.Count - 1]}{list7[list7.Count - 1]}{list8[list8.Count - 1]}{list9[list9.Count - 1]}";
         }
     }
 
