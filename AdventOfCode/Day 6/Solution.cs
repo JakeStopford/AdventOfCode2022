@@ -18,5 +18,20 @@ namespace AdventOfCode.Day6
 
             return i + 1;
         }
+
+        public static int FindStartOfMessageMarker()
+        {
+            var i = 0;
+            for (i = 13; i < datastream.Length; i++)
+            {
+                var arr = datastream.Substring(i - 13, 14).ToCharArray();
+                if (arr.Select(x => x).Distinct().Count() == 14)
+                {
+                    break;
+                }
+            }
+
+            return i + 1;
+        }
     }
 }

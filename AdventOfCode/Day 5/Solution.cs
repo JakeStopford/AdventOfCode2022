@@ -65,7 +65,8 @@ namespace AdventOfCode.Day5
 
         public static object GetTopCrates9001()
         {
-            
+            var arrays = cranes.TakeWhile(x => x != "");
+            var instructions = cranes.Skip(arrays.Count() + 1).ToList();
 
             BuildInstructionList(instructions);
 
